@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayank Pandey | Digital Marketing Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #000000; }
+      ::-webkit-scrollbar-thumb { background-color: #222222; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background-color: #8892b0; }
+
+      /* Initial state for scroll-triggered animations */
+      .section-hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .section-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Keyframe Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+      @keyframes scaleOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      /* Animation Classes */
+      .fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+      .stagger-1 { animation: fadeInUp 0.5s ease-out 0.1s forwards; opacity: 0; }
+      .stagger-2 { animation: fadeInUp 0.5s ease-out 0.2s forwards; opacity: 0; }
+      .stagger-3 { animation: fadeInUp 0.5s ease-out 0.3s forwards; opacity: 0; }
+      .stagger-4 { animation: fadeInUp 0.5s ease-out 0.4s forwards; opacity: 0; }
+      .stagger-5 { animation: fadeInUp 0.5s ease-out 0.5s forwards; opacity: 0; }
+      .animate-float-1 { animation: fadeInUp 0.5s ease-out 0.2s forwards, float 6s ease-in-out infinite 0.5s; }
+      .animate-float-2 { animation: fadeInUp 0.5s ease-out 0.3s forwards, float 6s ease-in-out infinite 1s; }
+      .modal-enter { animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+      .modal-leave { animation: fadeOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+      .modal-content-enter { animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+      .modal-content-leave { animation: scaleOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+      /* Custom Cursor */
+      .cursor-glow {
+        pointer-events: none;
+        position: fixed;
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(100, 255, 218, 0.2) 0%, rgba(100, 255, 218, 0) 60%);
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+      }
+      .cursor-glow.hovering {
+          width: 60px;
+          height: 60px;
+          background: radial-gradient(circle, rgba(100, 255, 218, 0.3) 0%, rgba(100, 255, 218, 0) 60%);
+      }
+      @media (max-width: 768px) {
+        .cursor-glow {
+          display: none;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'black': '#000000',
+              'dark-gray': '#121212',
+              'gray': '#222222',
+              'slate': '#8892b0',
+              'light-slate': '#a8b2d1',
+              'lightest-slate': '#ccd6f6',
+              'teal': '#64ffda',
+              'teal-dark': '#14a388'
+            }
+          }
+        }
+      }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-black text-slate font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
